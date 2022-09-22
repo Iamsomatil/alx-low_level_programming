@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * string_toupper - changes all lowercase leters
- * @s: string
- * Return: dest
+ * *string_toupper - convert lower case string to upper
+ * @str: pointer referencing the string array
+ * Return: the resulting string's pointer
  */
-char *string_toupper(char *s)
+char *string_toupper(char *str)
 {
-	int count = 0;
+	int count;
 
-	while (*(s + count) != '\0')
+	for (count = 0; str[count] != '\0'; count++)
 	{
-		if ((*(s + count) >= 97) && (*(s + count) <= 122))
-			*(s + count) = *(s + count) - 32;
-		count++;
+		if (str[count] <= 'z' && str[count] >= 'a')
+			str[count] -= 32;
 	}
-	return (s);
+
+	return (str);
 }

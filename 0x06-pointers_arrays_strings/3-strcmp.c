@@ -1,21 +1,22 @@
 #include "main.h"
 
 /**
- * _strcmp - compare two string
- * @s1: first str
- * @s2: second str
- * Return: 0
+ * _strcmp - compares 2 strings together
+ * @s1: pointer referencing the first string
+ * @s2: pointer referencing the second string
+ * Return: ns1 - ns2 if flase and 0 if true
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0, j = 0;
+	int count;
 
-	while (j == 0)
+	for (count = 0; s1[count] != '\0' || s2[count] != '\0'; count++)
 	{
-		if ((*(s1 + i) == '\0') && (*(s2 + i) == '\0'))
-			break;
-		j = *(s1 + i) - *(s2 + i);
-		i++;
+		if (s1[count] != s2[count])
+		{
+			return (s1[count] - s2[count]);
+		}
 	}
-	return (j);
+
+	return (0);
 }
